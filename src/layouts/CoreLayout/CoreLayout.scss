@@ -1,0 +1,10 @@
+// CoreLayout
+
+@import '../../styles/theme/theme';
+
+.core-layout {
+  min-height: 100%;
+  background-color: $gray-x-lightest;
+  display: flex;
+  flex-direction: column;
+}

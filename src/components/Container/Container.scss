@@ -1,0 +1,32 @@
+// Container styles
+
+@import '../../styles/theme/theme';
+@import '../../styles/bootstrap/mixins';
+
+
+.container {
+  background-color: #fff;
+  border-radius: $border-radius;
+  box-shadow: inset 0px -1px 0px 0px $gray-lightest;
+}
+
+.container-content {
+  padding: 30px 30px;
+
+  @include media-breakpoint-up(lg) {
+    padding: 30px 50px;
+  }
+}
+
+.container-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  border-bottom: 1px solid $gray-lightest;
+  padding: 0 30px;
+  font-family: $font-family-display;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

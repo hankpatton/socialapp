@@ -1,0 +1,1 @@
+export authCheck from './authCheck'

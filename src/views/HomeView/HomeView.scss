@@ -1,0 +1,25 @@
+// HomeView styles
+
+@import '../../styles/theme/theme';
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+.timeline-add-post-container {
+  border: 1px solid $gray-lightest;
+  padding: 24px 20px;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  box-shadow: inset 0 -1px 0 0 $gray-lightest;
+}
+
+.add-post-divider {
+  margin: 25px 0 0 0;
+  padding-bottom: 25px;
+  border-top: 1px solid $gray-lightest;
+}

@@ -1,0 +1,40 @@
+// Icon styles
+
+@import '../../styles/theme/theme';
+
+.icon {
+  transition: color 100ms linear;
+}
+
+.m-icon-xs {
+  font-size: 14px;
+}
+
+.m-icon-sm {
+  font-size: 18px;
+}
+
+.m-icon-lg {
+  font-size: 36px;
+}
+
+.m-icon-xl {
+  font-size: 48px;
+}
+
+.m-icon-gray-lt {
+  color: $gray-light;
+}
+
+.m-icon-danger {
+  color: $brand-danger;
+}
+
+.m-icon-info {
+  color: $brand-info;
+}
+
+.icon-btn {
+  vertical-align: text-bottom;
+  margin-right: 4px;
+}
