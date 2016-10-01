@@ -12,8 +12,7 @@ import api from './api/router'
 import mongoose from 'mongoose'
 import webpackDevMiddleware from './middleware/webpack-dev'
 import webpackHMRMiddleware from './middleware/webpack-hmr'
-import dotenv from 'dotenv'
-import logger from 'koa-logger';
+import logger from 'koa-logger'
 
 const debug = _debug('app:server')
 const paths = config.utils_paths

@@ -35,19 +35,25 @@ class AddComment extends Component {
 
   render () {
     const { handleSubmit, valid, locationState } = this.props
-    console.log(locationState)
     return (
       <form onSubmit={handleSubmit(this.submit)} className={cx('post-item-add-comment-form')}>
-        <Field name='comment' component={renderInput} type='text' label='What do you want to say?' locationState={locationState} />
+        <Field name='comment' component={RenderInput} type='text' label='What do you want to say?' locationState={locationState} />
         <button type='submit' className={cx('btn', 'btn-success', 'btn-sm', 'post-item-add-comment-btn', {'disabled': !valid})}>Submit</button>
       </form>
     )
   }
 }
 
-const renderInput = ({input, label, type, locationState}) => (
+const RenderInput = ({input, label, type, locationState}) => (
   <input {...input} placeholder={label} type={type} className={cx('form-control', 'form-control-sm', 'post-item-add-comment-input')} required autoFocus={locationState === 'addCommentFocus'} />
 )
+
+RenderInput.propTypes = {
+  input: PropTypes.string,
+  label: PropTypes.string,
+  type: PropTypes.string,
+  locationState: PropTypes.string
+}
 
 const validate = (values) => {
   const errors = {}

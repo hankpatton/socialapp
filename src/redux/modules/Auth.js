@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect'
 import jwtDecode from 'jwt-decode'
+import Auth0Lock from 'auth0-lock'
 
 // Constants
 export const constants = {

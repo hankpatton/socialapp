@@ -4,7 +4,6 @@ import { reducer as formReducer } from 'redux-form'
 import posts from './modules/Posts'
 import auth from './modules/Auth'
 
-
 export default combineReducers({
   router,
   auth,

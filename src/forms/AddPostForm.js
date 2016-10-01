@@ -37,7 +37,7 @@ class AddPost extends Component {
     return (
       <form onSubmit={handleSubmit(this.submit)}>
         <div className='form-group'>
-          <Field name='post' component={renderInput} type='text' label='What do you want to say?' />
+          <Field name='post' component={RenderInput} type='text' label='What do you want to say?' />
         </div>
         <button type='submit' className={cx('btn', 'btn-primary', 'btn-md', {'disabled': !valid})}>Submit</button>
       </form>
@@ -45,9 +45,15 @@ class AddPost extends Component {
   }
 }
 
-const renderInput = ({input, label, type}) => (
+const RenderInput = ({input, label, type}) => (
   <textarea {...input} placeholder={label} type={type} className='form-control' rows='5' required autoFocus />
 )
+
+RenderInput.propTypes = {
+  input: PropTypes.string,
+  label: PropTypes.string,
+  type: PropTypes.string
+}
 
 const validate = (values) => {
   const errors = {}
