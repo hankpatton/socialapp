@@ -7,7 +7,6 @@ import Container from 'components/Container/Container'
 const cx = classNames.bind(styles)
 
 class FourZeroFour extends Component {
-
   render () {
     return (
       <div>

@@ -36,7 +36,7 @@ class EditPost extends Component {
     return (
       <form onSubmit={handleSubmit(this.submit)}>
         <div className='form-group'>
-          <Field name='text' component={renderInput} type='text' />
+          <Field name='text' component={RenderInput} type='text' />
         </div>
         <button type='submit' className={cx('btn', 'btn-primary', 'btn-sm', {'disabled': !valid})}>Submit</button>
         <button onClick={() => handleEditToggle} className={cx('btn', 'btn-muted', 'btn-sm')} style={{marginLeft: 15}}>Cancel</button>
@@ -45,9 +45,15 @@ class EditPost extends Component {
   }
 }
 
-const renderInput = ({input, label, type}) => (
+const RenderInput = ({input, label, type}) => (
   <textarea {...input} type={type} className='form-control' rows='5' required autoFocus />
 )
+
+RenderInput.propTypes = {
+  input: PropTypes.string,
+  label: PropTypes.string,
+  type: PropTypes.string
+}
 
 const validate = (values) => {
   const errors = {}

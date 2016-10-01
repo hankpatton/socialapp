@@ -4,7 +4,7 @@ import fetch from 'isomorphic-fetch'
 const API_URL = '/api/'
 
 // Set Headers
-function getHeaders() {
+function getHeaders () {
   return {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
@@ -13,28 +13,27 @@ function getHeaders() {
 }
 
 // Handle Response
-async function handleResponse(res) {
+async function handleResponse (res) {
   let data
   try {
     data = await res.json()
   } catch (err) {
-    throw new Error(err);
+    throw new Error(err)
   }
   if (res.status >= 400) {
-    throw new Error('database error');
+    throw new Error('database error')
   }
   return data
 }
 
-function formUrl(path) {
+function formUrl (path) {
   return API_URL + path
 }
-
 
 // HTTP METHODS /////////////////////////////
 
 // fetch GET Utility
-export async function get(path) {
+export async function get (path) {
   const url = formUrl(path)
   const res = await fetch(url, {
     method: 'GET',
@@ -43,9 +42,8 @@ export async function get(path) {
   return await handleResponse(res)
 }
 
-
-//fetch POST Utility
-export function post(path) {
+// fetch POST Utility
+export function post (path) {
   const url = formUrl(path)
   return async (body) => {
     const res = await fetch(url, {
@@ -57,7 +55,7 @@ export function post(path) {
   }
 }
 
-export function put(path) {
+export function put (path) {
   const url = formUrl(path)
   return async (body) => {
     const res = await fetch(url, {
@@ -70,7 +68,7 @@ export function put(path) {
 }
 
 // fetch DELETE Utility
-export async function del(path) {
+export async function del (path) {
   const url = formUrl(path)
   const res = await fetch(url, {
     method: 'DELETE',

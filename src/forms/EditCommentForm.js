@@ -42,7 +42,7 @@ class EditComment extends Component {
     return (
       <form className={cx('edit-comment-form')} onSubmit={handleSubmit(this.submit)}>
         <div className='form-group'>
-          <Field name='comment' component={renderInput} type='text' />
+          <Field name='comment' component={RenderInput} type='text' />
         </div>
         <button type='submit' className={cx('btn', 'btn-primary', 'btn-sm', {'disabled': !valid})}>Submit</button>
         <button
@@ -57,9 +57,15 @@ class EditComment extends Component {
   }
 }
 
-const renderInput = ({input, label, type}) => (
+const RenderInput = ({input, label, type}) => (
   <textarea {...input} type={type} className='form-control' rows='3' required autoFocus />
 )
+
+RenderInput.propTypes = {
+  input: PropTypes.string,
+  label: PropTypes.string,
+  type: PropTypes.string
+}
 
 const validate = (values) => {
   const errors = {}

@@ -17,15 +17,15 @@ const postSchema = new Schema({
 })
 
 postSchema.virtual('comments', {
-  ref: 'Comment', // The model to use
-  localField: '_id', // Find people where `localField`
-  foreignField: 'post.id' // is equal to `foreignField`
+  ref: 'Comment',
+  localField: '_id',
+  foreignField: 'post.id'
 })
 
 postSchema.virtual('likes', {
-  ref: 'Like', // The model to use
-  localField: '_id', // Find people where `localField`
-  foreignField: 'post.id' // is equal to `foreignField`
+  ref: 'Like',
+  localField: '_id',
+  foreignField: 'post.id'
 })
 
 postSchema.virtual('comment_count').get(function () {
@@ -41,8 +41,8 @@ postSchema.statics.deletePost = async function(postId) {
 }
 
 postSchema.pre('remove', async function(next) {
-  const likes = await Like.find({ 'post.id': this._id }).remove().exec()
-  const comments = await Comment.find({ 'post.id': this._id }).remove().exec()
+  await Like.find({ 'post.id': this._id }).remove().exec()
+  await Comment.find({ 'post.id': this._id }).remove().exec()
   next()
 })
 
